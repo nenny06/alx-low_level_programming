@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main -prints all single digit of base 10 using 
+ * main -prints all single digit of base 10 using
  * putchar starting from zero
  * Return: Always 0 (Success)
  */
