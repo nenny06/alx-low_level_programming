@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-/** 
+/**
  * main - prints all possible combinations of two digits
  * Return: Always 0
  */
@@ -10,7 +10,7 @@ int main(void)
 	int f_d;
 	int l_d;
 
-	int c2; 
+	int c2;
 	int f_d2;
 	int l_d2;
 
@@ -23,24 +23,21 @@ int main(void)
 		{
 			f_d2 = (c2 / 10 + '0');
 			l_d2 = (c2 % 10 + '0');
-
-			if ( c < c2)
+			if (c <= c2)
 			{
 				putchar(f_d);
 				putchar(l_d);
 				putchar(' ');
 				putchar(f_d2);
 				putchar(l_d2);
-
 				if (c != 98)
 				{
 					putchar(',');
 					putchar(' ');
-				}
+			}
 
 			}
 			c2++;
-
 		}
 		c++;
 
