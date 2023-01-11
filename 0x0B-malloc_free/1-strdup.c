@@ -11,35 +11,27 @@
  */
 char *_strdup(char *str)
 {
-	char *nstr;
-	unsigned int len, i;
+	int size, i;
+	char *ptr;
 
-	/* check is str is null */
 	if (str == NULL)
-	if (str == NULL)
-	{
 		return (NULL);
-	}
 
-	len = 0;
-	while (str[len] != '\0')
-	{
-		len++;
-	}
+	/*determining entered len length size*/
+	for (size = 0; str[size] != '\0'; size++)
+		;
 
-	nstr = malloc(sizeof(char) * (len + 1));
+	ptr = (char *) malloc((size + 1) * sizeof(char));
 
-	/* check if malloc was successful */
-	if (nstr == NULL)
-	{
+	if (ptr == NULL)
 		return (NULL);
-	}
 
-	for (i + 0; i < len; i++)
-	{
-		nstr[i] = str[i];
-	}
-	nstr[len] = '\0';
-	return (nstr);
+	/*copying content of @str into new array*/
+	for (i = 0; str[i] != '\0'; i++)
+		ptr[i] = str[i];
+	ptr[i] = '\0';
+
+	return (ptr);
 }
+
 
