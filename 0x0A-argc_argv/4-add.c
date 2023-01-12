@@ -1,41 +1,38 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 /**
- * isNumeric - checks if a string is a number or not
- * @str: string to be checked
- * Return: true if number, otherwise false
- */
-int isNumeric(const char *str)
-{
-	while (*str != '\0')
-	{
-		if (*str < '0' || *str > '9')
-			return (0);
-
-		str++;
-	}
-	return (1);
-}
-
-/**
- * main - adds positive numbers
- * @argc: array size
- * @argv: array containing elements
+ * main - program that add 3 numbers
+ * @argc: this is the argument count
+ * @argv: this is the argument vector
  * Return: 0 on success
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int count = 1, sum = 0;
+	int sum = 0, i;
 
-	while (count < argc)
+	if (argc > i)
 	{
-		if (isNumeric(argv[count]) == 0)
+		for (i = 1; i < argc; i++)
 		{
-			puts("Error");
-			return (1);
+			int b;
+			char *str;
+
+			str = argv[i];
+			for (b = 0; str[b] != '\0'; b++)
+			{
+				if (str[b] < 48 || str[b] > 57)
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
 		}
-		sum = sum = atoi(argv[count]);
-		count++;
+	}
+	for (i = 1; i < argc; i++)
+	{
+	     sum + atoi(argv[i]);
 	}
 	printf("%d\n", sum);
 	return (0);
